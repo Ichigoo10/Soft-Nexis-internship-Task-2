@@ -1,59 +1,82 @@
 Task 2 – Exploratory Data Analysis (EDA)
 
-This project focuses on **Exploratory Data Analysis (EDA)** as part of the *Data Science Using Python Internship*.
-EDA is the stage where raw, cleaned data is explored visually and statistically to uncover insights, patterns, correlations, and relationships among variables.
-The dataset used for this task is **tested.csv**, which contains passenger information from the Titanic dataset — ideal for mixed data analysis (numerical and categorial.
+This task involves Exploratory Data Analysis (EDA) as part of the Data Science Using Python Internship.
+EDA is the process of examining raw and cleaned data both visually and statistically to discover patterns, trends, correlations, and relationships among variables.
 
-The objective of this task is to analyze the dataset using statistical and visualization techniques to:
+The dataset used for this analysis is tested.csv, which contains Titanic passenger information. This dataset is suitable for analyzing both numerical and categorical features.
 
-* Understand data structure, patterns, and relationships.
-* Detect missing values, outliers, and feature imbalances.
-* Identify correlations between variables.
-* Derive meaningful insights that can support model building in later stages.
+Objective
+
+The main objectives of this EDA task are to:
+
+Understand the overall structure of the dataset and variable patterns.
+
+Identify missing values, outliers, and imbalances in features.
+
+Examine correlations between different variables.
+
+Extract meaningful insights to support subsequent predictive modeling.
+
 Importing Libraries
-Libraries such as **pandas**, **numpy**, **matplotlib**, **seaborn**, and **scipy** were imported for data analysis, visualization, and statistical operations.
+
+Python libraries such as pandas, numpy, matplotlib, seaborn, and scipy were imported to perform data manipulation, statistical analysis, and visualizations.
+
 Loading and Inspecting Data
-The dataset (`tested.csv`) was loaded using `pandas.read_csv()`.
-Initial checks like `.shape`, `.info()`, and `.describe()` helped understand the data size, types, and distribution.
+
+The dataset (tested.csv) was loaded using pandas.read_csv().
+Initial inspection with .shape, .info(), and .describe() helped to understand the dataset size, data types, and feature distributions.
+
 Handling Missing Values
-Missing values were identified using `.isnull().sum()` and handled through:
-Median imputation for numerical features (e.g., Age, Fare).
-Mode imputation for categorical features (e.g., Embarked).
-  This ensured the dataset was complete without dropping valuable records.
+
+Missing values were identified using .isnull().sum() and addressed as follows:
+
+Numerical features (e.g., Age, Fare) were filled with median values.
+
+Categorical features (e.g., Embarked) were filled with the mode.
+
+This approach ensured completeness of the dataset without losing important records.
+
 Removing Duplicates
-Duplicate rows were detected using `.duplicated().sum()` and removed to avoid data redundancy.
+
+Duplicate records were checked using .duplicated().sum() and removed to prevent redundancy and maintain data integrity.
+
 Univariate Analysis
 
-Histograms and Boxplots were plotted for numerical columns to visualize data distribution and outliers.
-Countplots were used for categorical features such as gender and class to examine frequency patterns.
+Histograms and boxplots were plotted for numerical columns to observe distributions and detect outliers.
+
+Countplots were used for categorical variables like Gender and Passenger Class to examine their frequency patterns.
 
 Bivariate and Correlation Analysis
 
-Relationships between features were explored using:
+Feature relationships were explored through:
 
-  * `seaborn.heatmap()` for correlation matrices.
-  * `pd.crosstab()` for categorical variable relationships.
-Example findings:
+Correlation Heatmaps (seaborn.heatmap) to examine linear relationships among numerical variables.
 
-  * Higher fares were associated with higher survival probability.
-  * 1st class passengers had significantly better survival rates.
+Cross-tabulations (pd.crosstab) to analyze relationships between categorical features.
+
+Key observations:
+
+Higher fares were often associated with increased survival probability.
+
+Passengers in 1st class had a significantly higher survival rate.
 
 Outlier Detection
 
-Outliers were detected using:
+Outliers were identified using:
 
-Boxplots to visualize extreme points.
-Z-score method to numerically identify values beyond ±3 standard deviations.
-Skewness and Kurtosis were calculated to assess data symmetry and peakedness.
-These measures helped in identifying non-normal features that might need transformation before modeling.
+Boxplots to visualize extreme data points.
+
+Z-score method to numerically detect values beyond ±3 standard deviations.
+
+Additionally, skewness and kurtosis were calculated to assess the symmetry and peakedness of the data distributions, highlighting features that may require transformation before modeling.
+
 Encoding and Saving
 
-Categorical columns were encoded using `LabelEncoder` to prepare data for modeling.
-The cleaned and analyzed dataset was saved as `tested_eda_processed.csv`.
-
+Categorical features were encoded using LabelEncoder to prepare the dataset for machine learning models.
+The cleaned and processed dataset was saved as tested_eda_processed.csv.
 
 Outcome
 
-This task provided a clear understanding of how to analyze, visualize, and interpret structured datasets using Python.
-The insights gained formed the foundation for predictive modeling and decision-making in subsequent stages of the internship.
-The EDA process successfully transformed raw data into meaningful information that drives further analysis.
+This EDA task provided a comprehensive understanding of the dataset through statistical and visual exploration.
+The insights gained form a strong foundation for predictive modeling and informed decision-making in the next stages of the internship.
+Overall, the process successfully transformed raw data into structured and actionable information for further analysis.
